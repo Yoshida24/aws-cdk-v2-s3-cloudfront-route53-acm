@@ -7,6 +7,6 @@ const app = new App();
 new AwsCdkV2StaticSiteStack(app, 'AwsCdkV2StaticSiteStack', {
   env: {
     account: process.env.CDK_DEFAULT_ACCOUNT,
-    region: process.env.CDK_DEFAULT_REGION // 'us-east-1'
+    region: process.env.CDK_DEFAULT_REGION,
   },
 });
