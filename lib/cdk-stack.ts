@@ -133,7 +133,7 @@ export class AwsCdkV2StaticSiteStack extends Stack {
 
     new aws_s3_deployment.BucketDeployment(this, 'WebsiteDeploy', {
       sources: [
-        aws_s3_deployment.Source.asset(path.join(__dirname, "../public"))
+        aws_s3_deployment.Source.asset(path.join(__dirname, "../public/"))
       ],
       destinationBucket: websiteBucket,
       distribution: distribution,
