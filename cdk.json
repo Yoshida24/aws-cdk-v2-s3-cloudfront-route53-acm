@@ -42,6 +42,6 @@
     "@aws-cdk/customresources:installLatestAwsSdkDefault": false,
     "rootDomain": "ebipnc.be",
     "assetsDomain": "custom-domain-dev001.ebipnc.be",
-    "allowCrossOrigin": false
+    "allowCrossOrigin": true
   }
 }
