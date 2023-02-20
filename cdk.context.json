@@ -1,1 +1,6 @@
-{}
+{
+  "hosted-zone:account=609014044253:domainName=ebipnc.be.:region=ap-northeast-1": {
+    "Id": "/hostedzone/Z3FQ5NM3X7LPM1",
+    "Name": "ebipnc.be."
+  }
+}

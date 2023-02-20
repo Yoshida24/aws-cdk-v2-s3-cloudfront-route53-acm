@@ -30,10 +30,22 @@ export class AwsCdkV2StaticSiteStack extends Stack {
       throw new Error('Set the Route53 root domain to context in cdk.json.');
     }
 
+    const allowCrossOrigin: string = this.node.tryGetContext('allowCrossOrigin');
+    if (allowCrossOrigin === undefined) {
+      throw new Error('Set if allow cross origin access to context in cdk.json.');
+    }
+
     const websiteBucket = new aws_s3.Bucket(this, 'WebsiteBucket', {
       removalPolicy: RemovalPolicy.DESTROY,
       versioned: true,
-      bucketName: assetsDomain
+      bucketName: assetsDomain,
+      cors: allowCrossOrigin ? [
+        {
+          allowedHeaders: ['*'],
+          allowedMethods: [aws_s3.HttpMethods.GET],
+          allowedOrigins: ['*'],
+        }
+      ] : undefined
     });
 
     const originAccessIdentity = new aws_cloudfront.OriginAccessIdentity(
@@ -121,7 +133,7 @@ export class AwsCdkV2StaticSiteStack extends Stack {
 
     new aws_s3_deployment.BucketDeployment(this, 'WebsiteDeploy', {
       sources: [
-        aws_s3_deployment.Source.asset(path.join(__dirname, "../public"))
+        aws_s3_deployment.Source.asset(path.join(__dirname, "../public/"))
       ],
       destinationBucket: websiteBucket,
       distribution: distribution,

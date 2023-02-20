@@ -41,6 +41,7 @@
     "@aws-cdk/aws-route53-patters:useCertificate": true,
     "@aws-cdk/customresources:installLatestAwsSdkDefault": false,
     "rootDomain": "ebipnc.be",
-    "assetsDomain": "custom-domain-dev1.ebipnc.be"
+    "assetsDomain": "custom-domain-dev001.ebipnc.be",
+    "allowCrossOrigin": true
   }
 }
