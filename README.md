@@ -27,7 +27,8 @@ Overwrite below property.
 {
   "params": {
     "rootDomain": "example.com",
-    "assetsDomain": "foo.example.com"
+    "assetsDomain": "foo.example.com",
+    "allowCrossOrigin": true
   }
 }
 ```
@@ -36,6 +37,7 @@ Overwrite below property.
 | ------------ | ------------ |
 | rootDomain | Host zone on Route53 |
 | assetsDomain | FQDN of assets domain |
+| allowCrossOrigin | true: Allow S3 Bucket to load from other origin |
 
 ### Deploy
 
