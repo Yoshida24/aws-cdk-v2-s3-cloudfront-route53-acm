@@ -40,8 +40,8 @@
     "@aws-cdk/aws-s3:serverAccessLogsUseBucketPolicy": true,
     "@aws-cdk/aws-route53-patters:useCertificate": true,
     "@aws-cdk/customresources:installLatestAwsSdkDefault": false,
-    "rootDomain": "ebipnc.be",
-    "assetsDomain": "custom-domain-dev001.ebipnc.be",
+    "rootDomain": "yourdomain.com",
+    "assetsDomain": "sub-domain.yourdomain.com",
     "allowCrossOrigin": false
   }
 }
